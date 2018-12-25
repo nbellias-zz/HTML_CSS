@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: linen;
+    }
+
+    h1 {
+      color: black;
+      text-align: center;
+    }
+
+    p {
+      font-family: verdana;
+      font-size: 20px;
+    }
+
+    #para1 {
+      text-align: center;
+      color: blue;
+    }
+
+    .center {
+      text-align: center;
+      color: red;
+    }
+
+    p.center {
+      text-align: center;
+      color: red;
+    }
+
+    p.large {
+      font-size: 300%;
+    }
+
+    /* grouping selectors */
+
+    h2,
+    h3,
+    p {
+      text-align: left;
+      color: blue;
+    }
+
+    /*
+      Style priorityQ
+        1.Inline style (inside an HTML element)
+        2.External and internal style sheets (in the head section)
+        3.Browser default
+      So, an inline style (inside a specific HTML element)
+      has the highest priority, which means that it will
+      override a style defined inside the <head> tag, or
+      in an external style sheet, or a browser default value.
+     */
+  </style>
+  <link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body>
+  <h1>My First CSS Example...Why Use CSS?</h1>
+  <p>CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes. </p>
+  <p id="para1">Hello World! (1)</p>
+  <h1 class="center">Red and center-aligned heading</h1>
+  <h2>Hello World! (2)</h2>
+  <p class="center large">Red and center-aligned paragraph.</p>
+  <h3>Hello World! (3)</h3>
+  <p>Hello World! (4)</p>
+  <h1 style="color:blue;margin-left:30px;">This is a heading</h1>
+  <h1 id="myheader">This is a heading</h1>
+</body>
+
+</html>

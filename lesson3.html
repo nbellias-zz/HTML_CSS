@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: gray;
+      background-image: url("img/mybackgrnd.jpeg");
+      background-repeat: repeat;
+      background-attachment: scroll;
+      background-position: right top;
+    }
+    div{
+      background-color: gray;
+    }
+    h1{
+      color: darkblue;
+    }
+    p{
+      color: blue;
+    }
+    #mydiv1{
+      background-color: rgb(118, 150, 180);
+      background-image: url("img/butterfly1.png");
+      background-size: 15%;
+      background-repeat: no-repeat;
+      background-attachment: local;
+      background-position: right top;
+      padding: 25px;
+    }
+    .mydiv2{
+      padding: 100px;
+      background: #104a74 url("img/butterfly1.png") repeat local left top
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Welcome</h1>
+    <p>This is an experimental site for background testing</p>
+  </div>
+  <div id="mydiv1">
+    <h1>Hello World</h1>
+  </div>
+  <div class="mydiv2">
+    <h1>Hello World</h1>
+  </div>
+</body>
+</html>

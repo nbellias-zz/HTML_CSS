@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 style="background-color:DodgerBlue;">Hello World</h1>
+
+  <p style="background-color:Tomato;">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+    ea commodo consequat.
+  </p>
+
+  <p style="color:MediumSeaGreen;">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+  <h1 style="border: 2px solid Tomato;">Hello World</h1>
+
+  <h1 style="border: 2px solid DodgerBlue;">Hello World</h1>
+
+  <h1 style="border: 2px solid Violet;">Hello World</h1>
+
+  <div name="colordiv" style="background-color: rgb(0,0,0)">
+    <h2 name="message" style="color: rgb(255,255,255)">rgb(255,255,255) ON rgb(0,0,0)</h2>
+  </div>
+
+  <form>
+    <div>
+      <input type="range" name="redv" value="0" min="0" max="255" step="1" autocomplete="off">
+    </div>
+    <div>
+      <input type="range" name="greenv" value="0" min="0" max="255" step="1" autocomplete="off">
+    </div>
+    <div>
+      <input type="range" name="bluev" value="0" min="0" max="255" step="1" autocomplete="off">
+    </div>
+  </form>
+  <script>
+    const colordiv = document.querySelector("[name=colordiv]");
+    const redv = document.querySelector("[name=redv]");
+    const greenv = document.querySelector("[name=greenv]");
+    const bluev = document.querySelector("[name=bluev]");
+    const msg = document.querySelector("[name=message]");
+
+    function RGB2HTML(red, green, blue)
+    {
+        var decColor =0x1000000 + blue + 0x100 * green + 0x10000 * red ;
+        return '#'+decColor.toString(16).substr(1);
+    }
+
+    function changeRgb(){
+      console.log("rgb(" + redv.value + "," + greenv.value + "," +  bluev.value + ")");
+      console.log("rgb(" + (255 - redv.value) + "," + (255 - greenv.value) + "," +  (255 - bluev.value) + ")");
+      colordiv.style.backgroundColor = "rgb(" + redv.value + "," + greenv.value + "," +  bluev.value + ")";
+      msg.innerHTML = "rgb(" + (255 - redv.value) + "," + (255 - greenv.value) + "," +  (255 - bluev.value) + ") ON rgb(" + redv.value + "," + greenv.value + "," +  bluev.value + ")";
+      msg.style.color = "rgb(" + (255 - redv.value) + "," + (255 - greenv.value) + "," +  (255 - bluev.value) + ")";
+    }
+    /*
+    function changeHex(){
+      colordiv.style.backgroundColor = RGB2HTML(redv.value,greenv.value,bluev.value);
+      msg.innerHTML = RGB2HTML((255 - redv.value),(255 - greenv.value),(255 - bluev.value)) + " ON " + RGB2HTML(redv.value,greenv.value,bluev.value);
+      msg.style.color = RGB2HTML((255 - redv.value),(255 - greenv.value),(255 - bluev.value));
+    }
+
+    function changeHsl(){
+      //How to use hsl?
+      hsl(0-360, 0-100%, 0-100%)
+    }
+
+    function changeRgba(){
+      //How to use rgba?
+      rgba(0-255, 0-255, 0-255, 0.0-1.0)
+    }
+
+    function changeHsla(){
+      //How to use hsla?
+      rgba(0-360, 0-100%, 0-100%, 0.0-1.0)
+    }
+
+    */
+    redv.addEventListener("input", changeRgb);
+    greenv.addEventListener("input", changeRgb);
+    bluev.addEventListener("input", changeRgb);
+  </script>
+</body>
+
+</html>
